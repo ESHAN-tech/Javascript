@@ -1,0 +1,14 @@
+html collection array ki terha dekte hai but array ni hote hai mtlb ki ab in par map , reduce kuch 
+ve ni laga sakte hai 
+
+same for node list also ki wo array ki terha dekte hai but array ni hote h
+
+ispe array ki terha operations ni ker skte hai jaise ki pure node list ko green color me cahnge kerna ye 
+posible he ni hai 
+but h index wise color change ker skte hai 
+EXAMPLE 
+tempLiList[0].style.color = "green";
+OR Yaha for each use ker skte hai
+
+ager array ni h to for each use kero 
+ya fir usko array me convert ker k map lagao

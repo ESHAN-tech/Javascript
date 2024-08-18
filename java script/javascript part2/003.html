@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    
+</body>
+<script>
+    // Corrected the typo in "console.log"
+    var div = document.createElement('div');
+
+    console.log(div);
+
+    div.className = "main"; // This is a div element 
+
+    div.id = Math.random() * 10 + 1; // Using Math.random() function, +1 is added to avoid zero
+    // Now, other custom attributes can be set
+
+    div.setAttribute('title', 'generated title');
+
+    div.style.backgroundColor = "green";
+
+    div.style.padding = "12px";
+
+    // Adding text content to the div using text node
+    const addText = document.createTextNode("chai aur code");
+
+    div.appendChild(addText);
+   
+   /*
+   The reason we use div.appendChild(addText) instead of div.innerText is because
+   appendChild() method is more versatile. It allows us to append various types of nodes
+   like elements, text nodes, etc. In this case, we're appending a text node. If we were
+   to use innerText, it would overwrite any existing content within the div, whereas
+   appendChild() appends the text node after any existing content.
+   */
+
+   // Attaching the div to the document body
+   document.body.appendChild(div);
+
+</script>
+</html> 

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Chai aur code</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+
+    setTimeout(function(){
+        console.log("hitesh")
+    },2000);// 2 second baad execute ker dega
+
+
+    
+    const sayHitesh = function(){
+        console.log("Hitesh");
+    }
+
+    //setTimeout(sayHitesh(), 2000) , here executing the function
+    setTimeout(sayHitesh(), 2000)//giving refrence of the function
+
+
+    const changeText = function(){
+        document.querySelector('h1').innerHTML = "best JS series";
+    }
+
+    //Ager apne koi set time out laga diya hai to apko pata hona chaiye ki use roke kaise
+
+    const changeMe = setTimeout(changeText, 2000)
+
+    document.querySelector('#stop').addEventListener('click', function(){
+        clearTimeout(changeMe)
+        console.log("STOPPED")
+    })
+
+    /* 
+    notes 
+
+what is the difference between setInterval and setTimeout?
+ans:- interval mtlb itna time mujhe do  or break time per wo task 
+kerta he jayegaa or set time out mtlb itna time do or wo us task ko ek bar 
+ker dega not bar bar 
+
+setInterval -> it will execute the function after the interval of time
+setTimeout -> it will execute the function after the interval of time
+
+Ager apne koi set time out laga diya hai to apko pata hona chaiye ki use roke kaise
+to uske liye uske liye clearTimeout use kerte hai or isme ap refrence use kerte hai
+like ap kiska setTimeout change ker rahe hai 
+    
+    */ 
+</script>
+</html>

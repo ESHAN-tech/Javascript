@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <ul id="image">
+        <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
+        <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+        <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+        <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+        <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+        <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>   
+    </ul>
+    
+</body>
+<script>
+    //above explaination part is present in the previous code 
+   /* document.getElementById('owl').addEventListener('click', function() {
+        alert("owl clicked");
+    });
+*/
+
+    // ye tab print hoga jab ap images per click keroge 
+    document.getElementById('image').addEventListener('click', function(e) {
+        alert("clicked inside the ul");
+    },false);
+
+    //ye tab print hoga jab ap owl per click keroge
+    document.getElementById('owl').addEventListener('click', function(e) {
+        alert("owl clicked ");
+        e.stopPropagation()
+    },false);
+
+//changing the default feature of google 
+document.getElementById('google').addEventListener('click' , function(e){
+    e.preventDefault();
+    e.stopPropagation();
+    console.log("google clicked");
+   
+
+}, false)
+
+
+// TASK:- click on image and image get disappears 
+
+document.querySelector('#images').addEventListener("click" , function(){
+    console.log(e.target.parentNode);//parent node mtlb ki pura li tak hat jayega
+    if(e.target.tagName === 'IMG'){
+        console.log(e.target.id)
+    
+    let removeIt = e.target.parentNode
+    //removeIt.remove() yaha li se image del
+    removeIt.parentNode.removeChild(removeIt)//yaha ul se pura li he del
+    /* ager apne kisi li per click kiya to sare images del bcoz li 
+    parent is ul and ul del all li so use check like if condition mentioned in code*/
+    }
+})
+
+
+
+    //phle kya print hoga image or owl ?
+    //ans owl in false parameter and image in true parameter
+    // Event propagation
+    /*
+    NOTES PART
+    LINE 28 TO 35 :- Yaha per false lagaya tha to jab owl ko click kerte tab
+    phele owl click hota fir image click hote hai but ager ham log true parameter
+    lga denge to wo phle image click kerega then owl clicked means yaha event bubble hoke
+    jata hai , lekin kai bar ham bubbling ni chte hai mtlb inner element alg or 
+    outer element alg ho jaye
+
+    e.stopPropagation():- isay hoga ye ki ham owl per click kerenge to sirf owl print
+    hoga wo bubble bn k upper ni jayega or na image clicked print hoga
+ 
+    bubble matlab ki owl per be event laga hai or image per be
+    */
+</script>
+</html>
+

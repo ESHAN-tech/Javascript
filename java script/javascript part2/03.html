@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    
+</body>
+<script>
+    document.createElement('div');
+
+    connsole.log(div);
+
+    div.className = "main";// ye koi div hai 
+
+    div.id = Math.random( Math.random()*10 + 1)// by default function , +1 done for no zero comes
+    // baki or custom attribute set kerna hai then
+    div.setAttribute('title' , 'generated title');
+
+    div.style.backgroundColor = "green";
+
+    div.style.padding = "12px";
+
+// above we gives all the input but it will not display on page 
+    //bcoz the created div is in the memory
+
+
+   // div.innerText = "chai aur code";//it over write , yeah us merory ka refrence le ker ayega then overwrite karega
+
+    //here writing in text node 
+    const addText = document.createTextNode("chai aur code")
+
+   div.appendChild(addText);
+   /*
+   why we use div.appendChild(addText);<- this method if by using div.innerText 
+   we can easily add the text? which is optize in between them ?
+
+   */
+
+   // now attaching on document , ans document le then uski body le then append
+   document.body.appendChild(div);
+
+</script>
+</html>

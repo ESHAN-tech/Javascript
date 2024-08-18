@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2> Amazing image </h2>
+    <ul id = "image">
+        <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
+        <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+        <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+        <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" onclick="alert('owl')" ></li>
+        <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+        <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>   
+    </ul>
+    
+</body>
+<script>
+//approch 1st on owl...
+    /*document.getElementById('owl').onclick =function(){
+        alert("owl clicked")
+    }*/
+
+//approch 2nd on owl...
+   /* document.getElementById('owl').addEventListener('click',function () {
+        
+    } )
+*/
+//aproch 3rd :- attachEvent()---old method 
+//jQuery-on event listerner
+
+document.getElementById('owl').addEventListener('click',function (e) {
+        console.log({e})
+    }, true )
+
+//type , timestamp , defaultPrevented 
+//taget , toElement , srcElement , currentTarget,
+//clientX , clientY , screenX , screenY
+//altkey , ctrlkey , shiftkey , keyCode 
+
+// Event propagation
+
+</script>
+</html>
+
+
+
+
+
+
+
+
+
+<!--
+java script me event sequencially he run kerte ha
+using on click event on on owl is not an good practice and this approch is not an fesible approch 
+when your project is scale yhen problem may get aries , use second approch like in script 
+tag use document get id then acces the owl and perform the operation
+
+else we can use the third approch
+
+here u can also use event listner as they give u multiple features also
+document.getElementById('owl').addEventListener('click',function () {
+        
+    } false) //here 3rd default parameter present which we don't need to write it
+
+    Q)wht was the use of third parameter 
+    ans)some applications needs true or false parameter then 3rd parameter is used
+
+
+-->

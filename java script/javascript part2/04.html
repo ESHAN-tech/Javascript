@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: black; color: white;">
+    <ul class = "language">
+        <li> Javascript </li>
+        
+    </ul>
+    
+</body>
+
+<script>
+    function addLanguage(langName){
+        const li = document.createElement('li');
+        li.innerHTML = `${langName}`;// mtlb jo fun call me pass keroge wo print kerega
+        document.querySelector('.language').appendChild(li)
+//append kerne ki wajha se document ka pura tree traverse kerna padta hai , optimization issue ajata hai like koi bada project h to
+    }
+    addLanguage("typescript");
+    addLanguage("python");
+    addLanguage("java");
+
+    //optimize way to add...........
+    
+    function addOptiLangage(langName){
+        const li = document.createElement('li');
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector('.language').appendChild(li)
+    }
+    addOptiLangage('go lang');
+
+    /*
+    above approch is optimize bcoz yaha per pura tree traverse ni 
+    kerna pad raha hai aap sidha sidha li create kiya uske ander text node insert ki sidha kaam
+    ho gaya 
+    */
+
+   //Edit value
+// inner html is not optimize approch
+   const secondLang =document.querySelector("li:nth-child(2)")
+   secondLang.innerHTML = "Mojo";
+
+   // 2nd approch 
+   const newli = document.createElement('li');//li selected
+   newli.textContent = "Mojo"
+   secondLang.replaceWith(newli)
+
+   //edit 
+   const firstLang = document.querySelector("li:first-child")
+   firstLang.outerHTML='<li>TypeScript</li>'
+
+   //remove
+   const lastLang = document.querySelector("li:last-child")
+   lastLang.remove()
+
+</script>
+</html>
